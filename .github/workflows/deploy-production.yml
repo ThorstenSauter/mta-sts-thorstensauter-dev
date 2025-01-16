@@ -14,7 +14,7 @@ permissions:
 jobs:
   apply-production:
     name: Apply production environment
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     environment: production
     env:
       ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
@@ -39,7 +39,7 @@ jobs:
     name: Deploy to production Azure Static Web App
     needs:
       - apply-production
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     environment: production
     env:
       ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}

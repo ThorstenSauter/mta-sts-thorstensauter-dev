@@ -17,7 +17,7 @@ concurrency:
 jobs:
   validate:
     name: Validate Terraform configuration
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
 
   plan-production:
     name: Plan production environment
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     environment: production
     env:
       ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
