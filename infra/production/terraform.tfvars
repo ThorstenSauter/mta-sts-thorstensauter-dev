@@ -1,4 +1,4 @@
-location    = "westeurope"
+location = "westeurope"
 tags = {
   environment = "Production"
   managed-by  = "Terraform"
