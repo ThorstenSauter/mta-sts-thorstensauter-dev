@@ -3,9 +3,9 @@ variable "app_name" {
   description = "The application name used in created resource names."
 }
 
-variable "custom_domain_name" {
+variable "domain_name" {
   type        = string
-  description = "The custom domain name for the ingress and the managed certificate."
+  description = "The name of the domain for which to provision the MTA-STS website for."
 }
 
 variable "env" {
