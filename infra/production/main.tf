@@ -7,7 +7,7 @@ module "mta_sts" {
   azure_tags                = var.tags
   mta_sts_mode              = "enforce"
   mx_hosts = [
-    "thorstensauter-com.n-v1.mx.microsoft"
+    "thorstensauter-dev.a-v1.mx.microsoft"
   ]
   rua = [
     "mailto:tls-report@thorstensauter.dev"
