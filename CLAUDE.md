@@ -31,10 +31,6 @@ A real `plan`/`apply` needs the azurerm backend (configured through CI variables
 
 Edit the `module` block in `infra/production/main.tf`: `mx_hosts` (must match the domain's MX records exactly), `mta_sts_mode` (`testing`/`enforce`/`none`) and `rua` (the TLS-RPT report address). The module computes the policy ID from the rendered policy, so the `_mta-sts` TXT record and the redeploy follow automatically. When the mail provider's MX host changes, `mx_hosts` must be updated *before* the old host disappears. Otherwise senders in `enforce` mode will refuse delivery.
 
-## Legacy files
-
-`home/` (including `home/.well-known/mta-sts.txt`) is left over from before the module rendered and deployed the policy itself. Nothing references or deploys it, so it does **not** reflect the live policy. Don't edit it to change the policy.
-
 ## Conventions
 
 - Dependency updates (actions, the module `?ref=`, tflint plugin) come from Renovate using the shared `local>ThorstenSauter/renovate-config` preset. Major module bumps can change inputs, so check the module's release notes.
